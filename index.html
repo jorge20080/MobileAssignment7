@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="form.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="swiper.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Jorge De Los Santos Reyes</h1>
+    </header>
+    <form class="swiper-container">
+        <div class="swiper-wrapper">
+            <fieldset class="swiper-slide">
+                <legend>School Information:</legend>
+                <div class="fieldset_container">
+                    <label for="school_name" >Name of School</label>
+                    <div>
+                        <input type="text" id="school_name" placeholder="St. Clair College" required>
+                    </div>
+                    <label for="joining_date" >Date of Joining</label>
+                    <div>
+                        <input type="date" name="joining_date" id="joining_date" placeholder="10/10/1993" required>
+                    </div>
+                    <label>Graduated</label>
+                    <div class="radio_container">
+                        <div>
+                            <input type="radio" id="yes" name="graduated">
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div>
+                            <input checked type="radio" id="no" name="graduated" >
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="swiper-slide">
+                <legend>Personal Information:</legend>
+                <div class="fieldset_container">
+                    <label for="email">Email</label>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="test@test.com" required/>
+                    </div>
+                    <label for="phone">Phone Number</label>
+                    <div>
+                        <input type="text" name="phone" id="phone" placeholder="000-000-0000" pattern="^\d{3}-\d{3}-\d{4}$" oninvalid="this.setCustomValidity('Please enter a valid US phone number (e.g., 123-456-7890)')" oninput="this.setCustomValidity('')" required/>
+                    </div>
+                    <label for="zip">Zip Code</label>
+                    <div>
+                        <input type="text" name="zip" id="zip" pattern="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" required/>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="swiper-slide">
+                <legend>Payment Information:</legend>
+                <div class="fieldset_container">
+                    <label for="cc">Credit Card Number</label>
+                    <div>
+                        <input type="text" name="cc" id="cc" placeholder="0000-0000-0000-0000"/>
+                    </div>
+                    <label for="expiration">Expiration Date</label>
+                    <div>
+                        <input type="date" name="expiration" id="expiration"/>
+                    </div>
+                    <label for="cvv">CVV</label>
+                    <div>
+                        <input type="text" id="cvv" name="cvv" placeholder="123"/>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+        <input type="submit" />
+    </form>
+</body>
+</html>
